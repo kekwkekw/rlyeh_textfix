@@ -1,6 +1,6 @@
-- [ ] `python tools/audit_public_repo.py`가 PASS
 # GitHub 공개 전 체크리스트
 
+- [ ] `python tools/audit_public_repo.py`가 PASS
 - [ ] 실제 게임 파일/게임 DLL/게임 에셋이 Git 추적 대상에 없음
 - [ ] 일본어 원문 ↔ 한국어 번역 매핑 및 자동 캐시가 없음
 - [ ] 개인 절대 경로, API 키, 토큰, 로그, 덤프가 없음
