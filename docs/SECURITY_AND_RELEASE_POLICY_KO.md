@@ -16,4 +16,5 @@
 
 GitHub Release에 third-party 바이너리를 추가하는 경우 반드시 해당 upstream
 라이선스와 대응 소스/패치 제공 조건을 다시 확인합니다. 특히 수정된
-Il2CppInterop 바이너리는 LGPL-3.0 조건을 따릅니다.
+Il2CppInterop 바이너리는 `LGPL-3.0-only` 조건을 따르므로 대응 소스,
+변경 고지 및 라이선스 전문 제공 여부를 Release 전에 다시 검증합니다.

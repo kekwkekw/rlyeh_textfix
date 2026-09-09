@@ -16,19 +16,21 @@ projects remains under the applicable upstream license and is not relicensed by 
 
 - Upstream: https://github.com/BepInEx/Il2CppInterop
 - Tested upstream: v1.5.3 / `dbda1cb353b0f4253345dc45136d170b9e50a5a0`
-- License: LGPL-3.0
+- License expression: `LGPL-3.0-only`
 - Local modification: `patches/Il2CppInterop-v1.5.3/InjectorHelpers.patch`
 - Canonical license text: https://github.com/BepInEx/Il2CppInterop/blob/dbda1cb353b0f4253345dc45136d170b9e50a5a0/LICENSE
+- Local provenance notice: `licenses/Il2CppInterop-LGPL-3.0-only.NOTICE.md`
 
-The source repository publishes only the patch and exact upstream provenance. If a modified
-Il2CppInterop binary is redistributed separately, the distributor must satisfy the applicable
-LGPL-3.0 source and notice requirements for that binary.
+This source repository publishes only the patch and exact upstream provenance; it does not
+redistribute a modified Il2CppInterop binary. If such a binary is redistributed separately,
+the distributor must satisfy the applicable LGPL-3.0-only source, notice, and license-copy
+requirements for that binary.
 
 ## BepInEx
 
 - Upstream: https://github.com/BepInEx/BepInEx
 - Tested build: 6.0.0-be.785 / `6abdba47eeebe08552282e7a58ef0f4a9ab60b62`
-- License: LGPL-2.1
+- License expression: `LGPL-2.1-only`
 - This source repository does not redistribute BepInEx binaries.
 
 ## Unity Doorstop

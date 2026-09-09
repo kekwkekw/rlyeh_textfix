@@ -4,7 +4,8 @@
 - Version: `v1.5.3`
 - Commit: `dbda1cb353b0f4253345dc45136d170b9e50a5a0`
 - Modified file: `Il2CppInterop.Runtime/Injection/InjectorHelpers.cs`
-- License: LGPL-3.0
+- License expression: `LGPL-3.0-only`
+- Canonical license text: https://github.com/BepInEx/Il2CppInterop/blob/dbda1cb353b0f4253345dc45136d170b9e50a5a0/LICENSE
 
 The distributed compatibility DLL was verified as:
 
