@@ -1,0 +1,120 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>10.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+
+    <AssemblyName>RlyehTextFix</AssemblyName>
+    <RootNamespace>RlyehTextFix</RootNamespace>
+    <Version>1.1.0</Version>
+    <AssemblyVersion>1.1.0.0</AssemblyVersion>
+    <FileVersion>1.1.0.0</FileVersion>
+
+    <Platforms>AnyCPU</Platforms>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Deterministic>true</Deterministic>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'">
+    <Optimize>true</Optimize>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <Optimize>false</Optimize>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="BepInEx.Core">
+      <HintPath>$(GameDir)\BepInEx\core\BepInEx.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="BepInEx.Unity.IL2CPP">
+      <HintPath>$(GameDir)\BepInEx\core\BepInEx.Unity.IL2CPP.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="0Harmony">
+      <HintPath>$(GameDir)\BepInEx\core\0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common">
+      <HintPath>$(GameDir)\BepInEx\core\Il2CppInterop.Common.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime">
+      <HintPath>$(GameDir)\BepInEx\core\Il2CppInterop.Runtime.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Il2CppInterop.HarmonySupport">
+      <HintPath>$(GameDir)\BepInEx\core\Il2CppInterop.HarmonySupport.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>$(GameDir)\BepInEx\interop\Il2Cppmscorlib.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.UIModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule">
+      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.UI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro" Condition="Exists('$(GameDir)\BepInEx\interop\Unity.TextMeshPro.dll')">
+      <HintPath>$(GameDir)\BepInEx\interop\Unity.TextMeshPro.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextMeshPro" Condition="!Exists('$(GameDir)\BepInEx\interop\Unity.TextMeshPro.dll') And Exists('$(GameDir)\BepInEx\interop\UnityEngine.TextMeshPro.dll')">
+      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.TextMeshPro.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule" Condition="Exists('$(GameDir)\BepInEx\interop\UnityEngine.TextCoreFontEngineModule.dll')">
+      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreTextEngineModule" Condition="Exists('$(GameDir)\BepInEx\interop\UnityEngine.TextCoreTextEngineModule.dll')">
+      <HintPath>$(GameDir)\BepInEx\interop\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>$(GameDir)\BepInEx\interop\Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="ValidateGameReferences" BeforeTargets="ResolveReferences">
+    <Error Condition="'$(GameDir)' == ''" Text="GameDir is required. Build with /p:GameDir=&quot;C:\path\to\rlyehshoujotaix_cl&quot;." />
+    <Error Condition="!Exists('$(GameDir)\rlyehshoujotaix_cl.exe')"
+           Text="GameDir is incorrect: $(GameDir)\rlyehshoujotaix_cl.exe was not found." />
+    <Error Condition="!Exists('$(GameDir)\BepInEx\core\BepInEx.Core.dll')"
+           Text="BepInEx.Core.dll was not found under $(GameDir)\BepInEx\core." />
+    <Error Condition="!Exists('$(GameDir)\BepInEx\core\BepInEx.Unity.IL2CPP.dll')"
+           Text="BepInEx.Unity.IL2CPP.dll was not found under $(GameDir)\BepInEx\core." />
+    <Error Condition="!Exists('$(GameDir)\BepInEx\core\Il2CppInterop.Runtime.dll')"
+           Text="Il2CppInterop.Runtime.dll was not found under $(GameDir)\BepInEx\core." />
+    <Error Condition="!Exists('$(GameDir)\BepInEx\interop\UnityEngine.UI.dll')"
+           Text="UnityEngine.UI.dll was not found under $(GameDir)\BepInEx\interop." />
+    <Error Condition="!Exists('$(GameDir)\BepInEx\interop\Assembly-CSharp.dll')"
+           Text="Assembly-CSharp.dll was not found under $(GameDir)\BepInEx\interop." />
+    <Error Condition="!Exists('$(GameDir)\BepInEx\interop\Unity.TextMeshPro.dll') And !Exists('$(GameDir)\BepInEx\interop\UnityEngine.TextMeshPro.dll')"
+           Text="No TextMeshPro interop assembly was found under $(GameDir)\BepInEx\interop." />
+  </Target>
+
+</Project>

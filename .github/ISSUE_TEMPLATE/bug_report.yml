@@ -1,0 +1,44 @@
+name: Bug report
+description: Report a reproducible RlyehTextFix or compatibility issue
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: input
+    id: plugin-version
+    attributes:
+      label: RlyehTextFix version
+      placeholder: 1.1.0
+    validations:
+      required: true
+  - type: input
+    id: game-version
+    attributes:
+      label: Game / update date
+      description: Do not upload game binaries.
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Problem description
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log excerpt
+      description: Remove usernames, personal paths, API keys and tokens before posting.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checklist
+      options:
+        - label: I tested without unrelated BepInEx plugins.
+        - label: I did not replace the tested compatibility DLLs with other versions.
+        - label: I checked the log for personal information before posting it.

@@ -1,0 +1,21 @@
+Noto Serif CJK KR 기반 TMP 폰트 리소스 고지
+
+이 고지는 RlyehTextFix 관련 배포본에서 선택적으로 제공되는 `notoserifkr_sdf`
+TMP 폰트 AssetBundle에 적용됩니다. 이 GitHub 소스 저장소 자체에는 폰트
+바이너리 번들을 포함하지 않습니다.
+
+파일: notoserifkr_sdf
+TMP 에셋 이름: RlyehNotoSerifKR SDF
+원본 폰트 계열: Noto Serif CJK KR
+스타일: Bold
+변환 형식: UnityFS AssetBundle / TextMesh Pro SDF Font Asset
+
+Noto Serif CJK는 SIL Open Font License 1.1(OFL-1.1)에 따라 사용·수정·임베드·
+재배포됩니다. 폰트 번들을 GitHub Release 또는 별도 패키지로 배포하는 경우
+OFL-1.1 전문과 이 고지를 함께 제공합니다.
+
+공식 프로젝트:
+https://github.com/notofonts/noto-cjk
+
+공식 라이선스:
+https://github.com/notofonts/noto-cjk/blob/main/Serif/LICENSE

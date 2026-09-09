@@ -1,0 +1,27 @@
+#nullable disable
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Text;
+using BepInEx;
+using BepInEx.Configuration;
+using BepInEx.Logging;
+using BepInEx.Unity.IL2CPP;
+using HarmonyLib;
+using Il2CppInterop.Runtime;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+using Utage;
+
+namespace RlyehTextFix;
+
+internal enum StoryTargetKind
+{
+    None = 0,
+    StoryBody = 1,
+    SpeakerName = 2,
+    OptionPreviewBody = 3
+}
+

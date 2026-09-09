@@ -1,0 +1,12 @@
+diff --git a/Il2CppInterop.Runtime/Injection/InjectorHelpers.cs b/Il2CppInterop.Runtime/Injection/InjectorHelpers.cs
+--- a/Il2CppInterop.Runtime/Injection/InjectorHelpers.cs
++++ b/Il2CppInterop.Runtime/Injection/InjectorHelpers.cs
+@@ -78,7 +78,8 @@ namespace Il2CppInterop.Runtime.Injection
+                 GenericMethodGetMethodHook.ApplyHook();
+             GetTypeInfoFromTypeDefinitionIndexHook.ApplyHook();
+-            GetFieldDefaultValueHook.ApplyHook();
++            // Disabled for rlyehshoujotaix_cl / Unity 6000.3.5f2 compatibility.
++            // GetFieldDefaultValueHook.ApplyHook();
+             ClassInit ??= FindClassInit();
+             FromIl2CppTypeHook.ApplyHook();
+             FromNameHook.ApplyHook();

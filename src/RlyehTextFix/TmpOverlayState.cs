@@ -1,0 +1,31 @@
+#nullable disable
+using System;
+using System.Collections.Generic;
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Text;
+using BepInEx;
+using BepInEx.Configuration;
+using BepInEx.Logging;
+using BepInEx.Unity.IL2CPP;
+using HarmonyLib;
+using Il2CppInterop.Runtime;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+using Utage;
+
+namespace RlyehTextFix;
+
+internal sealed class TmpOverlayState
+{
+    internal Text Source;
+    internal GameObject OverlayObject;
+    internal RectTransform OverlayRect;
+    internal TextMeshProUGUI OverlayText;
+    internal float OriginalCanvasAlpha = 1.0f;
+    internal bool IsShowingOverlay;
+    internal int FullVisibleCharacters;
+    internal int CurrentVisibleCharacters = -1;
+}
+

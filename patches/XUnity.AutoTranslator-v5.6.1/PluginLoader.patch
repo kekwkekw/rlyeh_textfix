@@ -1,0 +1,15 @@
+diff --git a/src/XUnity.AutoTranslator.Plugin.Core/PluginLoader.cs b/src/XUnity.AutoTranslator.Plugin.Core/PluginLoader.cs
+--- a/src/XUnity.AutoTranslator.Plugin.Core/PluginLoader.cs
++++ b/src/XUnity.AutoTranslator.Plugin.Core/PluginLoader.cs
+@@ -42,7 +42,11 @@ namespace XUnity.AutoTranslator.Plugin.Core
+             Plugin = new AutoTranslationPlugin();
+             var obj = new GameObject( "___XUnityAutoTranslator" );
+             obj.hideFlags = HideFlags.HideAndDontSave;
+-            MonoBehaviour = obj.AddComponent<AutoTranslatorProxyBehaviour>();
++            MonoBehaviour = obj
++               .AddComponent(
++                  Il2CppInterop.Runtime.Il2CppType
++                     .Of<AutoTranslatorProxyBehaviour>())
++               .Cast<AutoTranslatorProxyBehaviour>();
+             GameObject.DontDestroyOnLoad( obj );
+ #endif
